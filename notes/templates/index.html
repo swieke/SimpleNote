@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{%block heading%}
+    What are you going to do today?
+{% endblock %}
+
+{% block body %}
+
+<h3>To do list: </h3>
+    <ul>
+        {%for note in notes %}
+            <li>{{note}}</li>
+        {%endfor%}
+    </ul>
+    
+    <form action="{{ url_for('index')}}" method="post">
+        <input type="text" name="note" placeholder="note">
+        <button>Add note</button>
+    </form>
+
+    
+
+
+{% endblock %}
+
+ 
